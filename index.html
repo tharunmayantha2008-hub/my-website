@@ -310,9 +310,17 @@
         title: "The Crash",
         category: "Action",
         year: "2026",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNKgAtiSuB1H5QgeSot_0dnBmcfJCDzBuT2w&s",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX12dMpoOGj73QqY7Nqt6dTOgSVvzYp8i1dA&s",
         embed: "https://streamimdb.ru/embed/movie/tt40792117"
+      },
+      {
+        title: "Lee Cronin's The Mummy",
+        category: "horror",
+        year: "2026",
+        image: "https://m.media-amazon.com/images/M/MV5BNWQ1NzI2YTUtN2E0ZS00YzVmLTkxNjktMWIzNTYwMzkyOTU0XkEyXkFqcGc@._V1_.jpg",
+        embed: "https://streamimdb.ru/embed/movie/tt32612507"
       }
+
     ];
 
     const grid = document.getElementById('movieGrid');
@@ -359,9 +367,7 @@
       emptyState.style.display = filtered.length ? 'none' : 'block';
 
       // Home page shows a compact 5-item view first, but all matches are still available when filtering/searching.
-      const visible = activeCategory === 'All' && !searchInput.value.trim()
-        ? filtered.slice(0, 5)
-        : filtered;
+     const visible = filtered;
 
       grid.innerHTML = visible.map((movie, index) => `
         <article class="card" data-index="${movies.indexOf(movie)}" aria-label="Play ${movie.title}">
@@ -415,4 +421,3 @@
 </html>
 
 
-https://streamimdb.ru/embed/movie/tt40792117
